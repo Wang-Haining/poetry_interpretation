@@ -101,7 +101,7 @@ if __name__ == "__main__":
         train_dataset=dataset["train"],
         eval_dataset=dataset["validation"],
         formatting_func=formatting_func,
-        max_seq_length=2048,
+        max_seq_length=1024,
         args=training_args,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
     )

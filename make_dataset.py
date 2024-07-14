@@ -1,3 +1,11 @@
+"""
+This script process a csv file holding data scrapped from p**m*n*lysis.
+"""
+
+__author__ = "hw56@indiana.edu"
+__version__ = "0.0.1"
+__license__ = "0BSD"
+
 import pandas as pd
 from datasets import Dataset, DatasetDict
 

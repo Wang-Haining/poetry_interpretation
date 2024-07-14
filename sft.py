@@ -69,6 +69,8 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="right")
     model = AutoModelForCausalLM.from_pretrained(model_name,
                                                  torch_dtype=torch.bfloat16)
+    # enable gradient checkpointing to save memory
+    model.gradient_checkpointing_enable()
 
     training_args = TrainingArguments(
         output_dir=f"{CKPTS_DIR}/{run_name}",

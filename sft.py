@@ -45,7 +45,7 @@ def formatting_func(example: DatasetDict) -> List[str]:
     for i in range(len(example["source"])):
         text = (
             TASK_PREFIX
-            + f"{example['source'][i]}{RESPONSE_TEMP} {example['target'][i]}"
+            + f"{example['Content'][i]}{RESPONSE_TEMP} {example['Summary'][i]}"
         )
         output_texts.append(text)
 

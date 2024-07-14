@@ -8,7 +8,8 @@ __license__ = "0BSD"
 
 import torch
 import argparse
-from transformers import AutoModelForCausalLM, AutoTokenizer, HfApi
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from huggingface_hub import HfApi
 
 def upload_checkpoint(checkpoint_path: str, model_name: str):
     """

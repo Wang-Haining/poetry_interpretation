@@ -68,6 +68,8 @@ if __name__ == "__main__":
     run_name = f'sft_{model_name.split("/")[-1]}'
     tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="right")
     model = AutoModelForCausalLM.from_pretrained(model_name,
+                                                 trust_remote_code=True,
+                                                 force_download=True,
                                                  torch_dtype=torch.bfloat16)
     # enable gradient checkpointing to save memory
     model.gradient_checkpointing_enable()
@@ -103,7 +105,7 @@ if __name__ == "__main__":
         train_dataset=dataset["train"],
         eval_dataset=dataset["validation"],
         formatting_func=formatting_func,
-        max_seq_length=1024,
+        max_seq_length=1024 + 512,
         args=training_args,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
     )

@@ -72,7 +72,7 @@ if __name__ == "__main__":
                                                  force_download=True,
                                                  torch_dtype=torch.bfloat16)
     # enable gradient checkpointing to save memory
-    model.gradient_checkpointing_enable()
+    # model.gradient_checkpointing_enable()
 
     training_args = TrainingArguments(
         output_dir=f"{CKPTS_DIR}/{run_name}",

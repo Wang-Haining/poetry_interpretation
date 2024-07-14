@@ -1,7 +1,6 @@
 """
-This module performs supervised finetuning on the OLMo, Gemma, and LLama3 using the
-Scientific Abstract-Significance Statement dataset (SASS). It concatenates scientific
-abstracts with their simplified versions using a straightforward template.
+This module performs supervised finetuning on the OLMo using the 1156 poem-summary
+pairs.
 """
 
 __author__ = "hw56@indiana.edu"

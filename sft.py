@@ -42,7 +42,7 @@ def formatting_func(example: DatasetDict) -> List[str]:
         A list of formatted strings ready for model training.
     """
     output_texts = []
-    for i in range(len(example["source"])):
+    for i in range(len(example["Content"])):
         text = (
             TASK_PREFIX
             + f"{example['Content'][i]}{RESPONSE_TEMP} {example['Summary'][i]}"
